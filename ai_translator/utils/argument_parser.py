@@ -3,7 +3,7 @@ import argparse
 class ArgumentParser:
     def __init__(self):
         self.parser = argparse.ArgumentParser(description='Translate English PDF book to Chinese.')
-        self.parser.add_argument('--book', type=str, required=True, help='PDF file to translate.')
+        self.parser.add_argument('--book', type=str, required=False, help='PDF file to translate.')
         self.parser.add_argument('--config', type=str, default='config.yaml', required=False, help='Configuration file with model and API settings.')
         self.parser.add_argument('--model_type', type=str, default="OpenAIModel", required=False, choices=['GLMModel', 'OpenAIModel'], help='The type of translation model to use. Choose between "GLMModel" and "OpenAIModel".')        
         #self.parser.add_argument('--glm_model_url', type=str,required=False, help='The URL of the ChatGLM model URL.')
