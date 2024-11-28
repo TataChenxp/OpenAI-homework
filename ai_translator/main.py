@@ -24,11 +24,12 @@ if __name__ == "__main__":
     os.environ["OPENAI_API_KEY"] = api_key
     os.environ["OPENAI_BASE_URL"] = base_url
     
-    model = OpenAIModel(model=model_name, api_key=api_key)
+    model = OpenAIModel(model=model_name)
 
     pdf_file_path = config['common']['book']
     file_format = config['common']['file_format']
+    target_language = config['common']['target_language']
 
     # 实例化 PDFTranslator 类，并调用 translate_pdf() 方法
     translator = PDFTranslator(model)
-    translator.translate_pdf(pdf_file_path, file_format)
+    translator.translate_pdf(pdf_file_path, file_format, target_language)
